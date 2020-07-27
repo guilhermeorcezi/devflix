@@ -1,4 +1,5 @@
 import React from 'react';
+import { VideoCardContainer } from './styles';
 
 function getYouTubeId(youtubeURL) {
 	return youtubeURL.replace(
@@ -8,11 +9,12 @@ function getYouTubeId(youtubeURL) {
 }
 
 function VideoCard({ videoTitle, videoURL, categoryColor }) {
+    console.log(videoTitle,videoURL)
 	const image = `https://img.youtube.com/vi/${getYouTubeId(
 		videoURL
 	)}/hqdefault.jpg`;
 	return (
-		<VideoCard
+		<VideoCardContainer
 			url={image}
 			href={videoURL}
 			target="_blank"

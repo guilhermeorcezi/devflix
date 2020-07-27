@@ -6,7 +6,7 @@ import Carousel from './components/Carousel';
 
 function App() {
 	return (
-		<main style={{ background: '#141414' }}>
+		<>
 			<Menu />
 
 			<MainWrapper
@@ -17,9 +17,13 @@ function App() {
 				}
 			/>
 			{InitialData.categorias.map((item, index) => (
-				<Carousel category={item} key={index} />
+				<Carousel
+					category={item}
+					key={index}
+					ignoreFirstVideo={index === 0 ? true : false}
+				/>
 			))}
-		</main>
+		</>
 	);
 }
 
