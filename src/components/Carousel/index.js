@@ -1,6 +1,8 @@
 import React from 'react';
-import { CardGroup, CardList, Title, ExtraLink } from './styles';
+import { CardGroup, Title, ExtraLink } from './styles';
 import VideoCard from '../VideoCard';
+import { SliderItem } from './components/Slider/styles';
+import Slider from './components/Slider/';
 
 export default function Carousel({ ignoreFirstVideo, category }) {
 	const categoryTitle = category.titulo;
@@ -22,23 +24,23 @@ export default function Carousel({ ignoreFirstVideo, category }) {
 					)}
 				</>
 			)}
-			<CardList>
+			<Slider>
 				{videos.map((video, index) => {
 					if (ignoreFirstVideo && index === 0) {
 						return null;
 					}
 
 					return (
-						<li key={video.titulo}>
+						<SliderItem key={video.titulo}>
 							<VideoCard
 								videoTitle={video.titulo}
 								videoURL={video.url}
 								categoryColor={categoryColor}
 							/>
-						</li>
+						</SliderItem>
 					);
 				})}
-			</CardList>
+			</Slider>
 		</CardGroup>
 	);
 }

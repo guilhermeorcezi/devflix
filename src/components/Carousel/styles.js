@@ -40,7 +40,6 @@ export const CardList = styled.ul`
 	display: flex;
 	overflow-x: auto;
 	flex-direction: row;
-	overflow-x: hidden;
 
 	li {
 		margin-right: 16px;
