@@ -7,7 +7,7 @@ export default function DefaultPage({ children }) {
 	return (
 		<>
 			<Menu />
-			<Main>{children}</Main>
+			{children}
 			<Footer />
 		</>
 	);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardGroup, Title, ExtraLink } from './styles';
+import { CardGroup, Title } from './styles';
 import VideoCard from '../VideoCard';
 import { SliderItem } from './components/Slider/styles';
 import Slider from './components/Slider/';
@@ -7,7 +7,6 @@ import Slider from './components/Slider/';
 export default function Carousel({ ignoreFirstVideo, category }) {
 	const categoryTitle = category.titulo;
 	const categoryColor = category.cor;
-	const categoryExtraLink = category.link_extra;
 	const videos = category.videos;
 
 	return (
@@ -17,11 +16,6 @@ export default function Carousel({ ignoreFirstVideo, category }) {
 					<Title style={{ backgroundColor: categoryColor || 'red' }}>
 						{categoryTitle}
 					</Title>
-					{categoryExtraLink && (
-						<ExtraLink href={categoryExtraLink.url} target="_blank">
-							{categoryExtraLink.text}
-						</ExtraLink>
-					)}
 				</>
 			)}
 			<Slider>

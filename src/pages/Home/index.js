@@ -1,4 +1,5 @@
 import Menu from '../../components/Menu';
+import Footer from '../../components/Footer';
 import InitialData from '../../data/initialData.json';
 import MainWrapper from '../../components/MainWrapper';
 import Carousel from '../../components/Carousel';
@@ -25,6 +26,7 @@ function Home() {
 					ignoreFirstVideo={index === 0 ? true : false}
 				/>
 			))}
+			<Footer />
 		</>
 	);
 }
