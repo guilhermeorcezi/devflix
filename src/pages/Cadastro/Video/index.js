@@ -19,8 +19,8 @@ export default function CadastroVideo() {
 	});
 
 	useEffect(() => {
-		categoryRepository.getAll().then((categoriasFromServer) => {
-			setCategories(categoriasFromServer);
+		categoryRepository.getAll().then((categories) => {
+			setCategories(categories);
 		});
 	}, []);
 
@@ -28,7 +28,7 @@ export default function CadastroVideo() {
 		e.preventDefault();
 
 		const chosenCategory = categories.find((category) => {
-			return category.title === values.category;
+			return category.titulo === values.category;
 		});
 
 		videosRepository

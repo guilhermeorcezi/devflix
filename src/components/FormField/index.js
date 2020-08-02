@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormFieldWrapper, Label, LabelText, Input } from './styled';
 
-function FormField({ label, type, name, value, onChange }) {
+function FormField({ label, type, name, value, onChange, suggestions}) {
 	const isTypeTextArea = type === 'textarea';
 	const tag = isTypeTextArea ? 'textarea' : 'input';
 	const hasValue = Boolean(value.length);
 	const fieldId = `id_${name}`;
+	const hasSuggestions = Boolean(suggestions.length);
 
 	return (
 		<FormFieldWrapper>
@@ -18,10 +19,21 @@ function FormField({ label, type, name, value, onChange }) {
 					value={value}
 					name={name}
 					hasValue={hasValue}
-					className="colorField"
 					onChange={onChange}
+					autoComplete={hasSuggestions ? 'off' : 'on'}
+					list={hasSuggestions ? `suggestionFor_${fieldId}` : undefined}
 				/>
 				<LabelText>{label}</LabelText>
+				{hasSuggestions && (
+					<datalist id={`suggestionFor_${fieldId}`}>
+						{suggestions.map((suggestion) => (
+							<option
+								value="suggestion"
+								key={`suggestionFor_${fieldId}_option${suggestion}`}
+							></option>
+						))}
+					</datalist>
+				)}
 			</Label>
 		</FormFieldWrapper>
 	);

@@ -30,6 +30,48 @@
       "descricao": "Oi",
       "cor": "",
       "id": 6
+    },
+    {
+      "titulo": "nova categoria",
+      "descricao": "Descrição",
+      "cor": "",
+      "id": 7
+    },
+    {
+      "titulo": "ss",
+      "descricao": "s",
+      "cor": "#ff0000",
+      "id": 8
+    },
+    {
+      "titulo": "sa",
+      "descricao": "sa",
+      "cor": "#923a3a",
+      "id": 9
+    },
+    {
+      "titulo": "d",
+      "descricao": "d",
+      "cor": "#f50000",
+      "id": 10
+    },
+    {
+      "titulo": "teste",
+      "descricao": "sdaaaa",
+      "cor": "#11ff00",
+      "id": 11
+    },
+    {
+      "titulo": "a",
+      "descricao": "s",
+      "cor": "#eeff00",
+      "id": 12
+    },
+    {
+      "titulo": "a",
+      "descricao": "s",
+      "cor": "",
+      "id": 13
     }
   ],
   "videos": [
