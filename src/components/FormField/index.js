@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormFieldWrapper, Label, LabelText, Input } from './styled';
 
-function FormField({ label, type, name, value, onChange, suggestions}) {
+function FormField({ label, type, name, value, onChange, suggestions }) {
 	const isTypeTextArea = type === 'textarea';
 	const tag = isTypeTextArea ? 'textarea' : 'input';
 	const hasValue = Boolean(value.length);
@@ -28,9 +28,11 @@ function FormField({ label, type, name, value, onChange, suggestions}) {
 					<datalist id={`suggestionFor_${fieldId}`}>
 						{suggestions.map((suggestion) => (
 							<option
-								value="suggestion"
+								value={suggestion}
 								key={`suggestionFor_${fieldId}_option${suggestion}`}
-							></option>
+							>
+								{suggestion}
+							</option>
 						))}
 					</datalist>
 				)}
@@ -42,6 +44,8 @@ function FormField({ label, type, name, value, onChange, suggestions}) {
 FormField.defaultProps = {
 	type: 'text',
 	value: '',
+	onChange: () => {},
+	suggestions: [],
 };
 
 FormField.propTypes = {
@@ -49,7 +53,8 @@ FormField.propTypes = {
 	name: PropTypes.string.isRequired,
 	type: PropTypes.string,
 	value: PropTypes.string,
-	onChange: PropTypes.func.isRequired,
+	onChange: PropTypes.func,
+	suggestions: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default FormField;

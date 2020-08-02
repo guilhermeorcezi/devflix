@@ -11,7 +11,7 @@ import Form from '../../../components/Form/index';
 export default function CadastroVideo() {
 	const history = useHistory();
 	const [categories, setCategories] = useState([]);
-	const categoryTitles = categories.map(({ title }) => title);
+	const categoryTitles = categories.map(({ titulo }) => titulo);
 	const { handleChange, values } = useForm({
 		title: '',
 		url: '',
