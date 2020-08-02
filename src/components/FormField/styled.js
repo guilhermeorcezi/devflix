@@ -42,14 +42,17 @@ export const Input = styled.input`
 	font-size: 16px;
 	color: #6c6c80;
 	transition: border-color 0.3s;
-	max-width:500px;
+	max-width: 500px;
+	resize: none;
+	display: block;
+	outline: 0;
 
 	&:focus {
 		border-bottom-color: var(--primary);
 	}
 
 	&:focus:not([type='color']) + ${LabelText} {
-		transform: scale(0.6) translateY(-10px) translateX(-5px);
+		transform: scale(0.6) translateY(-10px);
 	}
 
 	${({ value }) => {
@@ -57,7 +60,7 @@ export const Input = styled.input`
 		return (
 			hasValue &&
 			css`
-				&:not([type='color']) + ${Label.Text} {
+				&:not([type='color']) + ${LabelText} {
 					transform: scale(0.6) translateY(-10px);
 				}
 			`
