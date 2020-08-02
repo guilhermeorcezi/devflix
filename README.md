@@ -31,20 +31,11 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - [ReactJS](https://reactjs.org/)
 - [Styled Components](https://styled-components.com//)
 
-## :heavy_check_mark: Resultado:
-
-<h3 align="center">
-<img alt="web gif" title="#logo" width="700px" src="./github_assets/webgif.gif">
-</h3>
-
-<a id="como-usar"></a>
-
 ## :fire: Como utilizar
 
 ### :exclamation: Instalação - Front-End (Aplicação Web)
 Para iniciar o **Frontend** do React utilize os comandos:
 ```bash
-cd web
 yarn install // npm install
 yarn start // npm start
 ```
