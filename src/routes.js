@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import CadastroVideo from './pages/CadastroVideo';
-import CadastroCategoria from './pages/CadastroCategoria';
+import CadastroVideo from './pages/Cadastro/Video';
+import CadastroCategoria from './pages/Cadastro/Categoria';
 import Home from './pages/Home';
 
 function Routes() {

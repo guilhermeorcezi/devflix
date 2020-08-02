@@ -5,15 +5,19 @@ import { FormFieldWrapper, Label, LabelText, Input } from './styled';
 function FormField({ label, type, name, value, onChange }) {
 	const isTypeTextArea = type === 'textarea';
 	const tag = isTypeTextArea ? 'textarea' : 'input';
+	const hasValue = Boolean(value.length);
+	const fieldId = `id_${name}`;
 
 	return (
 		<FormFieldWrapper>
-			<Label>
+			<Label htmlFor={fieldId}>
 				<Input
 					as={tag}
+					id={fieldId}
 					type={type}
 					value={value}
 					name={name}
+					hasValue={hasValue}
 					className="colorField"
 					onChange={onChange}
 				/>

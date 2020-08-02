@@ -1,33 +1,40 @@
-import Menu from '../../components/Menu';
-import Footer from '../../components/Footer';
-import InitialData from '../../data/initialData.json';
+import React, { useState, useEffect } from 'react';
+import PageDefault from '../../template/DefaultPage';
 import MainWrapper from '../../components/MainWrapper';
 import Carousel from '../../components/Carousel';
-import React from 'react';
-
-// import { Container } from './styles';
+import categoriasRepository from '../../repositories/Categoria';
 
 function Home() {
+	const [initialData, setInitialData] = useState([]);
+
+	useEffect(() => {
+		categoriasRepository
+			.getAllWithVideos()
+			.then((item) => {
+				console.log('ai', item);
+				setInitialData(item);
+			})
+			.catch((err) => {
+				return;
+			});
+	}, []);
+
 	return (
-		<>
-			<Menu />
+		<PageDefault>
+			{initialData.length === 0 && <div>Loading...</div>}
 
 			<MainWrapper
-				videoTitle={InitialData.categorias[0].videos[0].titulo}
-				url={InitialData.categorias[0].videos[0].url}
+				videoTitle={''}
+				url={'#'}
 				videoDescription={
 					'O que é Front-end? Trabalhando na área os termos HTML, CSS e JavaScript fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal? Descubra com a Vanessa!'
 				}
 			/>
-			{InitialData.categorias.map((item, index) => (
-				<Carousel
-					category={item}
-					key={index}
-					ignoreFirstVideo={index === 0 ? true : false}
-				/>
+
+			{initialData.map((item) => (
+				<Carousel category={item} key={item.id} />
 			))}
-			<Footer />
-		</>
+		</PageDefault>
 	);
 }
 
