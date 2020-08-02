@@ -38,6 +38,7 @@
 		]
 	},
 	"devDependencies": {
-		"concurrently": "^5.2.0"
+		"concurrently": "^5.2.0",
+		"react-toastify": "^6.0.8"
 	}
 }

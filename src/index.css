@@ -31,3 +31,11 @@ body {
 a {
 	color: inherit;
 }
+
+.Toastify__toast--error {
+	background: #fe1030 !important;
+}
+
+.Toastify__toast--success{
+	background-color: #2a7ae4 !important;
+}

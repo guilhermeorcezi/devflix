@@ -7,6 +7,7 @@ import Form from '../../../components/Form/';
 import Button from '../../../components/Button/';
 import useForm from '../../../hooks/useForm';
 import categoriaRepository from '../../../repositories/Categoria';
+import { toast } from 'react-toastify';
 
 export default function Categoria() {
 	const initialData = { title: '', description: '', color: '' };
@@ -22,7 +23,7 @@ export default function Categoria() {
 				cor: values.color,
 			})
 			.then(() => {
-				handleChange(initialData);
+				toast.success('Categoria cadastrada.');
 				clearForm();
 			});
 	}
@@ -48,8 +49,8 @@ export default function Categoria() {
 				<FormField
 					label="Cor"
 					type="color"
-					name="cor"
-					value={values.cor}
+					name="color"
+					value={values.color}
 					onChange={handleChange}
 				/>
 

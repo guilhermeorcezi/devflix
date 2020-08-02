@@ -7,6 +7,7 @@ import Button from '../../../components/Button';
 import videosRepository from '../../../repositories/Video';
 import categoryRepository from '../../../repositories/Categoria';
 import Form from '../../../components/Form/index';
+import { toast } from 'react-toastify';
 
 export default function CadastroVideo() {
 	const history = useHistory();
@@ -38,6 +39,7 @@ export default function CadastroVideo() {
 				categoriaId: chosenCategory.id,
 			})
 			.then(() => {
+				toast.success('Vídeo cadastrado.');
 				history.push('/');
 			});
 	}
