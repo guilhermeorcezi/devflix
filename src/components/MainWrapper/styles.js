@@ -19,7 +19,7 @@ Container.Item = styled.div`
 	width: 50%;
 	display: inline-block;
 	margin-bottom: 50px;
-	margin-left:10px;
+	margin-left: 10px;
 	@media (max-width: 800px) {
 		width: 100%;
 	}
@@ -46,8 +46,8 @@ Container.Category = styled.h1`
 `;
 
 Container.Description = styled.p`
-	line-height:1.6em;
-	text-align:justify;
+	line-height: 1.6em;
+	text-align: justify;
 	@media (max-width: 800px) {
 		display: none;
 	}
@@ -57,13 +57,21 @@ Container.Title = styled.h2`
 	font-style: normal;
 	font-weight: 600;
 	font-size: 40px;
-	line-height: 1;
+	line-height: 1.5;
 	margin-top: 0;
 	margin-bottom: 32px;
 	@media (max-width: 800px) {
 		font-size: 32px;
 		text-align: center;
 	}
+`;
+
+Container.Span = styled.span`
+	color: var(--primary);
+`;
+
+export const ImageBanner = styled.img`
+	max-width: 100%;
 `;
 
 export const BannerContainer = styled.section`

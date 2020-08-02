@@ -22,7 +22,6 @@ export default function Categoria() {
 				cor: values.color,
 			})
 			.then(() => {
-				console.log('Cadastrado!');
 				handleChange(initialData);
 				clearForm();
 			});
@@ -55,6 +54,7 @@ export default function Categoria() {
 				/>
 
 				<Button type="submit">Cadastrar</Button>
+				<Link to="/cadastro/video">Cadastrar Vídeo</Link>
 			</Form>
 
 			<Link to="/">Ir para home</Link>

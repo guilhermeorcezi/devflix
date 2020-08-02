@@ -1,29 +1,21 @@
 import React from 'react';
-import VideoFrame from '../VideoFrame';
-import { BannerContainer, Container, WatchButton } from './styles';
+import { BannerContainer, Container, WatchButton, ImageBanner } from './styles';
+import banner from '../../assets/img/banner.png';
 
-function getYouTubeId(youtubeURL) {
-	return youtubeURL.replace(
-		/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-		'$7'
-	);
-}
-
-export default function MainWrapper({ videoTitle, videoDescription, url }) {
-	const youTubeID = getYouTubeId(url);
-	const bgUrl = `https://img.youtube.com/vi/${youTubeID}/maxresdefault.jpg`;
-
+export default function MainWrapper() {
 	return (
-		<BannerContainer backgroundImage={bgUrl}>
+		<BannerContainer>
 			<Container>
 				<Container.Item>
-					<Container.Title>{videoTitle}</Container.Title>
-
-					<Container.Description>{videoDescription}</Container.Description>
+					<Container.Title>
+						Plataforma para compartilhamento de vídeos sobre{' '}
+						<Container.Span>desenvolvimento</Container.Span>{' '}e
+						<Container.Span>{' '}tecnologia</Container.Span> .
+					</Container.Title>
 				</Container.Item>
 
 				<Container.Item>
-					<VideoFrame youtubeID={youTubeID} />
+					<ImageBanner src={banner} alt="Devflix" />
 					<WatchButton>Assistir</WatchButton>
 				</Container.Item>
 			</Container>

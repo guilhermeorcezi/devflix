@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import PageDefault from '../../../template/DefaultPage';
 import useForm from '../../../hooks/useForm';
 import FormField from '../../../components/FormField';
@@ -38,7 +38,6 @@ export default function CadastroVideo() {
 				categoriaId: chosenCategory.id,
 			})
 			.then(() => {
-				console.log('Cadastrado');
 				history.push('/');
 			});
 	}
@@ -68,9 +67,8 @@ export default function CadastroVideo() {
 				/>
 
 				<Button type="submit">Cadastrar</Button>
+				<Link to="/cadastro/categoria">Cadastrar Categoria</Link>
 			</Form>
-
-			<Link to="/">Ir para home</Link>
 		</PageDefault>
 	);
 }

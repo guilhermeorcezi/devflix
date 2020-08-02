@@ -9,7 +9,6 @@ function getYouTubeId(youtubeURL) {
 }
 
 function VideoCard({ videoTitle, videoURL, categoryColor }) {
-    console.log(videoTitle,videoURL)
 	const image = `https://img.youtube.com/vi/${getYouTubeId(
 		videoURL
 	)}/hqdefault.jpg`;

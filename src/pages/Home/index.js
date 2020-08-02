@@ -11,7 +11,6 @@ function Home() {
 		categoriasRepository
 			.getAllWithVideos()
 			.then((item) => {
-				console.log('ai', item);
 				setInitialData(item);
 			})
 			.catch((err) => {
@@ -23,13 +22,7 @@ function Home() {
 		<PageDefault>
 			{initialData.length === 0 && <div>Loading...</div>}
 
-			<MainWrapper
-				videoTitle={''}
-				url={'#'}
-				videoDescription={
-					'O que é Front-end? Trabalhando na área os termos HTML, CSS e JavaScript fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal? Descubra com a Vanessa!'
-				}
-			/>
+			<MainWrapper />
 
 			{initialData.map((item) => (
 				<Carousel category={item} key={item.id} />
